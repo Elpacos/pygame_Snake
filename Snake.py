@@ -34,6 +34,8 @@ class cube(object):
             pygame.draw.circle(surface, (0,0,0), circleMiddle, radius)
             pygame.draw.circle(surface, (0,0,0), circleMiddle2, radius)
 
+#snake constructor and init 
+            
 class snake(object):
     body = []
     turns = {}
@@ -45,6 +47,8 @@ class snake(object):
         self.dirnx = 0
         self.dirny = 1
 
+#movement
+        
     def move(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -99,6 +103,8 @@ class snake(object):
         self.turns = {}
         self.dirnx = 0
         self.dirny = 1
+        
+#function that activates when eating one cube making the snake also one cube larger
 
     def addCube(self):
         tail = self.body[-1]
@@ -123,7 +129,8 @@ class snake(object):
             else:
                 c.draw(surface)
 
-
+#background grid
+                
 def drawGrid(w, rows, surface):
     sizeBtwn = w // rows
 
@@ -167,6 +174,8 @@ def message_box(subject, content):
     except:
         pass
 
+#game main function 
+    
 def main():
     global width, rows, s, snack
     width = 500
